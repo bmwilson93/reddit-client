@@ -1,4 +1,4 @@
-# Codecademy
+# Reddit Client
 
 Codecademy Portfolio Project - Reddit Client
 
@@ -37,20 +37,20 @@ Codecademy Portfolio Project - Reddit Client
 - Details view for each post w/ Routing
 
 ### Components
-- Post component 
+- `Post component` 
     - hold the image of the post
     - reusable on the search results of posts
 
-- Post list
+- `Post list`
     - Holds a list of Post Components
 
-- Search Box
+- `Search Box`
 
-- Category Button
+- `Category Button`
     - Reusable 
     - Can change the category that each button corresponds to
 
-- Category List
+- `Category List`
     - Holds the category buttons
 
 
