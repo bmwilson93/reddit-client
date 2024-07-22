@@ -1,9 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 
+import ReduxTest from './ReduxTest.js';
+
 function App() {
   return (
     <div className="App">
+      <ReduxTest />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
