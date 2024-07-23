@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
-import ReduxTest from './ReduxTest.js';
+import ReduxTest from './ReduxTest.js'
+
 
 function App() {
   return (
