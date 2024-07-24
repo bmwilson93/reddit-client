@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 const PostModal = ({ title, imgUrl, ups, downs, selfText }) => {
   const [show, setShow] = useState(false);
 
@@ -24,16 +25,16 @@ const PostModal = ({ title, imgUrl, ups, downs, selfText }) => {
           <img src={imgUrl} />
           <p>{selfText}</p>
 
-          <p>{ups}</p>
-          <p>{downs}</p>
+          
         </Modal.Body>
         <Modal.Footer>
+          <div>
+            <p variant="primary">{ups}</p>
+            <p>{downs}</p>
+          </div>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          {/* <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button> */}
         </Modal.Footer>
       </Modal>
     </>
