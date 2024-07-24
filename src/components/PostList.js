@@ -1,15 +1,11 @@
 import React from 'react'
-
-import data from '../utils/mockData.js'
-
+import { useSelector } from 'react-redux' // allows us to get data from the redux store
 import PostModal from './PostModal.js';
 
 const PostList = () => {
 
-  console.log(data);
-  
-  //get the data from the store
-  // const currentPosts = useSelector(state => state.post.posts)
+  let data = useSelector(state => state.post.posts);
+  // console.log(data);
 
   return (
     <div>
