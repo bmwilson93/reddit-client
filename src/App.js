@@ -1,27 +1,33 @@
-import logo from './logo.svg';
+import { useEffect } from "react";
 import './App.css';
 
-import ReduxTest from './ReduxTest.js'
+// Post Stuff Imports
+import PostList from './components/PostList.js';
+import fetchPosts from "./utils/fetchPosts.js";
+
+// Redux Imports 
+import { useSelector, useDispatch } from 'react-redux' // allows to interact with the store
+import { updatePosts } from './slices/postSlice'; // the refucer function from the slice
+
+// !!! Add mock data to the store for now !!!
+import mockData from './utils/mockData.js'
 
 
 function App() {
+  const dispatch = useDispatch() // binds the useDispatch function to just dispatch
+
+  // get the reddit posts data with useEffect on load, save it to redux store
+  // !!! currently getting from mockData, change to fetchPosts util after testing !!!
+  useEffect(() => {
+    dispatch(updatePosts(mockData));
+  }, [])
+  
+
   return (
     <div className="App">
-      <ReduxTest />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <PostList />
+
     </div>
   );
 }
