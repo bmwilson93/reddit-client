@@ -7,7 +7,10 @@
 
 # testing
 /coverage
-/__tests__
+/src/__tests__
+.test.js
+src/utils/exDataJson.json
+
 
 # production
 /build
