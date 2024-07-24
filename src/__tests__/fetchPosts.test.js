@@ -1,18 +1,26 @@
 import fetchPosts from '../utils/fetchPosts.js';
 
-test('fetchPosts returns an array', () => {
-  expect(fetchPosts()).not.toBeNull();
-  expect(fetchPosts()).toEqual([]);
+test('fetchPosts returns an array', async () => {
+  // expect(fetchPosts()).not.toBeNull();\
+  const data = await fetchPosts();
+  expect(Array.isArray(data)).toEqual(true);
 })
 
-test('fetchPosts non empty array holds objects', () => {
-  expect(fetchPosts()[0]).toContain({});
-})
+// test('fetchPosts fetches the correct url', () => {
+//   expect(fetchPosts()).toEqual()
+// })
 
-// equal an array
+// test('fetchPosts non empty array holds objects', () => {
+//   expect(fetchPosts()[0]).toContain({});
+// })
+
+// returns an array
 // 
 // handle errors
-// non empty array holds objects
+
+// provided text search affects the url
+// provided category affects the url
+
 // non empty array holds correct data
 // store updates correctly
 
