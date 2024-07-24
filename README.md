@@ -31,6 +31,7 @@ Codecademy Portfolio Project - Reddit Client
 ### 
 
 ### Features *in progress*
+- fetch posts
 - Text Search
 - Categories List
 - Default r/popular Posts View
