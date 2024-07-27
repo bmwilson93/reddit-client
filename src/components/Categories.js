@@ -8,15 +8,16 @@ const Categories = () => {
   const currentCategory = useSelector(state => state.post.category);
   const dispatch = useDispatch() // binds the useDispatch function to just dispatch
 
-  // console.log(useStore());
-
   return (
     <div>
       <h2>Categories</h2>
       <ul>
         {categoryList.map(category => {
           return (
-            <li onClick={() => dispatch(updateCategory(category))}>
+            <li 
+              className = {currentCategory === category ? "selected" : ""}
+              onClick={() => dispatch(updateCategory(category))}
+            >
               {category}
             </li>
           )
