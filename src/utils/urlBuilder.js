@@ -5,11 +5,15 @@ const urlBuilder = (search, category) => {
 
   let url = 'https://www.reddit.com/';
   if (category.length > 0) url += `r/${category}/`;
-  url += '.json';
-  if (search.length > 0) url += `?q=${search}`;
+  if (search.length > 0) {
+    url += `search/.json?q=${search}`;
+  } else url += '.json'
+;  
 
   return url;
 
 }
 
 export default urlBuilder;
+
+// https://www.reddit.com/r/gaming/search/?q=pokemon
