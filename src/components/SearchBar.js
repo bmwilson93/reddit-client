@@ -10,15 +10,20 @@ const SearchBar = ({ getData }) => {
   const dispatch = useDispatch() // binds the useDispatch function to just dispatch
 
   return (
-    <div>
-      <form>
+    <div className="searchbar-container">
+      <form onSubmit={(e) => {
+          e.preventDefault();
+          getData();
+          }
+        }
+      >
         <input type="text"
           value={currentSearch}
           onChange={(e) => dispatch(updateSearch(e.target.value))}
         />
-        <Button variant="success" onClick={getData}>Search Posts</Button>
+        <Button variant="success" size="lg" onClick={getData}>Search Posts</Button>
       </form>
-      <p>{currentSearch}</p>
+      {/* <p>{currentSearch}</p> */}
     </div>
   )
 }

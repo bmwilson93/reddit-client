@@ -9,13 +9,13 @@ const Categories = () => {
   const dispatch = useDispatch() // binds the useDispatch function to just dispatch
 
   return (
-    <div>
-      <h2>Categories</h2>
+    <>
+      <h2>Subreddits</h2>
       <ul>
         {categoryList.map(category => {
           return (
             <li 
-              className = {currentCategory === category ? "selected" : ""}
+              className = {currentCategory === category ? "selected" :  ""}
               onClick={() => {
                 let cat = category;
                 if (category === "No Category") cat = "";
@@ -28,7 +28,7 @@ const Categories = () => {
         })}
       </ul>
       <p>Current Category{currentCategory}</p>
-    </div>
+    </>
   )
 }
 

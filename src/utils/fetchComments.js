@@ -1,13 +1,11 @@
-import urlBuilder from "./urlBuilder";
-
 // Mock Data for testing while developing
-// import { mockData } from './mockData.js'
+import mockPostData from './mockData.js'
 
-const fetchPosts = async (search = "", category = "") => {
-  let url = urlBuilder(search, category);
+const fetchComments = async (postURL) => {
+  let url = `https://www.reddit.com${postRUL}.json`;
 
   // !!! REMOVE THIS LINE AFTER DEVELOPMENT
-  // return mockData;
+  return mockPostData;
   // !!!
   
   // make the request in a try/catch
@@ -17,7 +15,7 @@ const fetchPosts = async (search = "", category = "") => {
     let data = await result.json();
     console.log(data)
 
-    return(data.data.children)
+    return(data)
   } catch (err) {
     console.log(" error and stuff! " + err);
     return [];
@@ -26,4 +24,4 @@ const fetchPosts = async (search = "", category = "") => {
 
 // fetchPosts();
 
-export default fetchPosts;
+export default fetchComments;

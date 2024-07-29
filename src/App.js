@@ -1,19 +1,20 @@
-import { useEffect } from "react";
 import './App.css';
+import { useEffect } from "react";
 import SearchBar from "./components/SearchBar.js";
-import Categories from "./components/Categories.js";
+
+import { Routes, Route } from 'react-router-dom';
 
 // Post Stuff Imports
-import PostList from './components/PostList.js';
 import fetchPosts from "./utils/fetchPosts.js";
 
 // Redux Imports 
 import { useSelector, useDispatch } from 'react-redux' // allows to interact with the store
 import { updatePosts } from './slices/postSlice'; // the refucer function from the slice
 
-// !!! Add mock data to the store for now !!!
-// import mockData from './utils/mockData.js'
 
+// Page imports
+import Home from './pages/Home';
+import Post from "./pages/Post";
 
 function App() {
   const dispatch = useDispatch() // binds the useDispatch function to just dispatch
@@ -35,9 +36,18 @@ function App() {
 
   return (
     <div className="App">
-      <Categories />
-      <SearchBar getData={getData}/>
-      <PostList />
+      <header>
+        <h1 className="title">Mineddit</h1>
+        <SearchBar getData={getData}/>
+        <div></div>
+      </header>
+
+      
+
+      <Routes>
+        <Route path='/' element={<Home />}  />
+        <Route path='/post/:id' element={<Post />} />
+      </Routes>
 
     </div>
   );

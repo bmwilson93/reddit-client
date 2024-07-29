@@ -1,10 +1,10 @@
 const categoryList = [
-  'No Category',
-  'r/funny',
-  'r/gaming',
-  'r/news',
-  'r/sports',
-  'r/art',
+  'all',
+  'funny',
+  'gaming',
+  'news',
+  'sports',
+  'art',
 ];
 
 export default categoryList;
