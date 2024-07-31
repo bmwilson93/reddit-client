@@ -1,0 +1,41 @@
+/* comments */
+.comments-container {
+  /* border-radius: 14px; */
+  /* border: 1px solid red; */
+  /* margin: 50px auto; */
+  margin-top: 150px;
+}
+
+.comment-container {
+  /* margin: 50px; */
+  text-align: left;
+  border-top: 3px solid #a1a1a1;
+  /* border-radius: 4px; */
+  width: 80%;
+  margin: 0 auto 100px auto;
+  /* padding: 18px; */
+}
+
+/* .comments-container ul li > div:first-child {
+  border-radius: 40px 40px 0 0;
+  background-color: red;
+}
+
+.comments-container ul:last-child {
+  border-radius: 0 0 4px 4px;
+} */
+
+.comment-container > div {
+  padding: 18px;
+}
+
+.comment-author-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  background-color: #ddd;
+}
+
+.comment-body > p {
+  font-size: 20px;
+}

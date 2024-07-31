@@ -1,0 +1,26 @@
+@import 'vars.css';
+
+/* search bar */
+.searchbar-container {
+  display: flex;
+}
+
+.searchbar-container input {
+  width: 30vw;
+  margin-right: 20px;
+}
+
+.searchbar-container input, 
+.searchbar-container button {
+  padding: 8px;
+  font-size: 16px;
+}
+
+.searchbar-container button {
+  border: none;
+  border-radius: 4px;
+  background-color: Var(--color-blue);
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+}

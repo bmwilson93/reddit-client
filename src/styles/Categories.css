@@ -1,0 +1,28 @@
+@import 'vars.css';
+
+/* category list */
+.category-container {
+  border-right: 1px solid gray;
+  padding: 32px 48px;
+  height: 100vh;
+}
+
+.category-container ul {
+  text-transform: capitalize;
+}
+
+.category-container ul li {
+  padding-left: -100px;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.category-container ul li:first-child {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.selected {
+  color: var(--color-blue);
+  /* background-color: var(--color-gray); */
+}

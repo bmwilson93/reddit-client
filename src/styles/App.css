@@ -1,0 +1,75 @@
+@import 'Categories.css';
+@import 'SearchBar.css';
+@import 'PostList.css';
+@import 'PostCard.css';
+@import 'Post.css';
+@import 'Comment.css';
+
+
+/* Universal App-wide styles */
+ul {
+  list-style-position: inside;
+  list-style: none;
+  margin-left: -2rem;
+}
+
+.post-title {
+  text-align: center;
+}
+
+.postlist-container, .post-container { 
+  margin-left: 10rem;
+  margin-top: 50px;
+}
+
+.post-image img {
+  width: 100%;
+}
+
+.votes {
+  padding-right: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.author-name {
+  color: var(--color-blue);
+}
+
+
+/* App Component */
+header {
+  background-color: #282c34;
+  color: white;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  padding: 30px;
+}
+
+main {
+  display: flex;
+}
+
+
+/* Home.css */
+.postlist-container ul li h3 {
+  font-size: 20px;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+ 

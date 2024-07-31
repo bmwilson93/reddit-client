@@ -1,0 +1,7 @@
+
+.postlist-container ul {
+  display: flex;
+  gap: 44px;
+  flex-wrap: wrap;
+}
+
