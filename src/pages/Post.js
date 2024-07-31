@@ -1,13 +1,61 @@
 import React from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+import { useEffect } from 'react';
+import Comment from '../components/Comment';
+import fetchComments from '../utils/fetchComments';
+
+// Redux Imports 
+import { useSelector, useDispatch } from 'react-redux' // allows to interact with the store
+import { updateComments } from '../slices/postSlice'; // the refucer function from the slice
+
 
 const Post = () => {
   const location = useLocation();
   const postData  = location.state.postData;
-  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const currentComments = useSelector(state => state.post.comments);
+  let regex2 = new RegExp('\.jpg|\.png|\.gif|\.jpeg$')
+
+  const getComments = async () => {
+    const data = await fetchComments(postData.data.permalink);
+    dispatch(updateComments(data[1].data.children));
+  }
+
+
+  useEffect(() => {
+    getComments();
+  }, [])
+
 
   return (
-    <div className="post-container">{postData.data.selftext}</div>
+    <div className="post-container">
+
+      <h2 className='post-title'>{postData.data.title}</h2>
+
+      {/* Self Text (only render if has text)*/}
+      <div className="post-selftext">
+        {postData.data.selftext != "" 
+          ? (<p>
+            {postData.data.selftext}
+          </p>)
+          : <></>
+        }
+      </div>
+
+      {/* Image (only render if has image)*/}
+      {regex2.test(postData.data.url) 
+      ? (<img src={postData.data.url} alt="" className=""/>) 
+      : <></>}
+
+      <div className='comments-container'>
+        {/* Map out the comments */}
+        <ul>
+          {currentComments.map(comment => {
+            return (<Comment comment={comment} />)
+          })}
+        </ul>
+      </div>
+    </div>
   )
 }
 
