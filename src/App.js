@@ -2,6 +2,7 @@ import './styles/App.css';
 import { useEffect } from "react";
 import SearchBar from "./components/SearchBar.js";
 import Categories from "./components/Categories.js";
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -21,12 +22,15 @@ function App() {
   const dispatch = useDispatch() // binds the useDispatch function to just dispatch
   const currentSearch = useSelector(state => state.post.search);
   const currentCategory = useSelector(state => state.post.category);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // function that retrives the posts and updates them in the redux store
   const getData = async () => {
     console.log(currentCategory)
     const data = await fetchPosts(currentSearch, currentCategory);
     dispatch(updatePosts(data));
+    navigate('/');
   }
 
   // get the reddit posts data with useEffect on load, save it to redux store
@@ -34,6 +38,11 @@ function App() {
   useEffect(() => {
     getData()
   }, [])
+
+  useEffect(() => {
+    console.log('Location changed');
+    window.scrollTo(0, 0);
+  }, [location]);
   
 
   return (
