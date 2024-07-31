@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { useEffect } from 'react';
 import Comment from '../components/Comment';
 import fetchComments from '../utils/fetchComments';
+import imgRegex from '../utils/imgRegex';
 
 // Redux Imports 
 import { useSelector, useDispatch } from 'react-redux' // allows to interact with the store
@@ -14,7 +15,6 @@ const Post = () => {
   const postData  = location.state.postData;
   const dispatch = useDispatch()
   const currentComments = useSelector(state => state.post.comments);
-  let regex2 = new RegExp('\.jpg|\.png|\.gif|\.jpeg$')
 
   const getComments = async () => {
     const data = await fetchComments(postData.data.permalink);
@@ -43,7 +43,7 @@ const Post = () => {
       </div>
 
       {/* Image (only render if has image)*/}
-      {regex2.test(postData.data.url) 
+      {imgRegex.test(postData.data.url) 
       ? (<img src={postData.data.url} alt="" className=""/>) 
       : <></>}
 
@@ -51,7 +51,7 @@ const Post = () => {
         {/* Map out the comments */}
         <ul>
           {currentComments.map(comment => {
-            return (<Comment comment={comment} />)
+            if (comment.kind == "t1") return (<Comment comment={comment} />)
           })}
         </ul>
       </div>

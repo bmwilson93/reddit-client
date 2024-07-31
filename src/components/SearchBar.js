@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
 
 // Redux Imports 
 import { useSelector, useDispatch } from 'react-redux' // allows to interact with the store
@@ -18,12 +17,12 @@ const SearchBar = ({ getData }) => {
         }
       >
         <input type="text"
+        placeholder='Search'
           value={currentSearch}
           onChange={(e) => dispatch(updateSearch(e.target.value))}
         />
-        <Button variant="success" size="lg" onClick={getData}>Search Posts</Button>
+        <button onClick={getData}>Search Posts</button>
       </form>
-      {/* <p>{currentSearch}</p> */}
     </div>
   )
 }

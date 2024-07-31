@@ -1,6 +1,7 @@
-import './App.css';
+import './styles/App.css';
 import { useEffect } from "react";
 import SearchBar from "./components/SearchBar.js";
+import Categories from "./components/Categories.js";
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -23,6 +24,7 @@ function App() {
 
   // function that retrives the posts and updates them in the redux store
   const getData = async () => {
+    console.log(currentCategory)
     const data = await fetchPosts(currentSearch, currentCategory);
     dispatch(updatePosts(data));
   }
@@ -37,17 +39,24 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1 className="title">Mineddit</h1>
+        <h1>Mineddit</h1>
         <SearchBar getData={getData}/>
         <div></div>
       </header>
 
-      
+      <main>
+        <div className='category-container'>
+          <Categories getData={getData}/>
+        </div>
 
-      <Routes>
-        <Route path='/' element={<Home />}  />
-        <Route path='/post/:id' element={<Post />} />
-      </Routes>
+        <section>
+          <Routes>
+            <Route path='/' element={<Home />}  />
+            <Route path='/post/:id' element={<Post />} />
+          </Routes>
+        </section>
+
+      </main>
 
     </div>
   );

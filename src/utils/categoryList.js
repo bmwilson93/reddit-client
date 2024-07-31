@@ -5,6 +5,9 @@ const categoryList = [
   'news',
   'sports',
   'art',
+  'pics',
+  'unexpected',
+  
 ];
 
 export default categoryList;

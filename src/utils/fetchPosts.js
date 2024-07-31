@@ -13,9 +13,9 @@ const fetchPosts = async (search = "", category = "") => {
   // make the request in a try/catch
   try {
     let result = await fetch(url);
-    console.log(result);
+    // console.log(result);
     let data = await result.json();
-    console.log(data)
+    // console.log(data)
 
     return(data.data.children)
   } catch (err) {

@@ -18,7 +18,7 @@ ul {
 }
 
 .postlist-container, .post-container { 
-  margin-left: 10rem;
+  margin-left: 10vw;
   margin-top: 50px;
 }
 
@@ -65,10 +65,150 @@ main {
   overflow: hidden;
 }
 
+.postlist-container > ul {
+  padding: 0;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 1100px) {
+  .postlist-container, .post-container { 
+    margin-left: 5vw;
+  }
+
+  .post-container > ul > li > div {
+    width: 200px;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  header {
+    flex-direction: column;
+  }
+
+  .searchbar-container > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .searchbar-container input {
+    width: 90%;
+    margin: 0 0 10px 0;
+    
+  }
+
+  .searchbar-container button {
+    width: 75%;
+    margin-bottom: 18px;
+  }
 
 
 
+  .category-container {
+    display: none;
+  }
 
+
+
+  section {
+    width: 100vw;
+  }
+
+  .postlist-container {
+    margin: 0;
+    justify-content: center;
+    width: 100vw;
+  }
+
+  .postlist-container ul {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .post-title {
+    padding: 5px;
+  }
+
+  .post-title h3{
+    font-size: 10px;
+  }
+
+  .post-text {
+    margin: 4px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .postlist-container ul li h3 {
+    font-size: 16px;
+  }
+
+  .postlist-container ul li, .post-card {
+    width: 98%;
+  }
+
+  .post-footer {
+    flex: 2 2 0;
+  }
+
+
+  .votes {
+    padding: 0;
+    font-weight: bold;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .author-name, .author, .votes {
+    font-size: 12px;
+  }
+
+  .comment {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  .post-container {
+    width: 90%;
+  }
+
+  .post-container h2 {
+    font-size: 18px;
+  }
+
+  .post-selftext p {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .comments-container {
+    margin-top: 50px;
+  }
+
+  .comment-container {
+    width: 100%;
+  }
+
+  .comment-container > div {
+    padding: 0 10px;
+  }
+
+  .comment-author-container {
+    padding: 0 10px;
+  }
+
+  .comment-body p {
+    font-size: 14px;
+  }
+}
 
 
 

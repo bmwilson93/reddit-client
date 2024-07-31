@@ -2,7 +2,7 @@ import React from 'react'
 
 const Comment = ({ comment }) => {
   return (
-    <li>
+    <li key={comment.data.id}>
       <div className='comment-container'>
 
         <div className='comment-author-container'>
@@ -12,9 +12,9 @@ const Comment = ({ comment }) => {
           </p>
 
           <div className='comment-votes votes'>
-            <box-icon name='up-arrow-alt'></box-icon>
+            <box-icon name='up-arrow-alt' color="#ff5c33"></box-icon>
             {comment.data.ups}
-            <box-icon name='down-arrow-alt' ></box-icon>
+            <box-icon name='down-arrow-alt' color="#1a8cff"></box-icon>
           </div>
         </div>
 

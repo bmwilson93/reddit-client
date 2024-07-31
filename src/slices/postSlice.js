@@ -5,7 +5,8 @@ export const postSlice = createSlice({
   initialState: {
     posts: [],
     category: "",
-    search: ""
+    search: "",
+    comments: []
   },
   reducers: {
     // update Posts, takes an action, which should hold an array of posts, and updates the state to equal that array
@@ -17,9 +18,12 @@ export const postSlice = createSlice({
     },
     updateSearch: (state, action) => {
       state.search = action.payload
+    },
+    updateComments: (state, action ) => {
+      state.comments = action.payload
     }
   }
 });
 
-export const { updatePosts, updateCategory, updateSearch } = postSlice.actions;
+export const { updatePosts, updateCategory, updateSearch, updateComments } = postSlice.actions;
 export default postSlice.reducer;

@@ -4,7 +4,7 @@ import categoryList from '../utils/categoryList'
 import { useSelector, useDispatch } from 'react-redux' // allows to interact with the store
 import { updateCategory } from '../slices/postSlice'; // the reducer function from the slice
 
-const Categories = () => {
+const Categories = ({ getData }) => {
   const currentCategory = useSelector(state => state.post.category);
   const dispatch = useDispatch() // binds the useDispatch function to just dispatch
 
@@ -18,8 +18,10 @@ const Categories = () => {
               className = {currentCategory === category ? "selected" :  ""}
               onClick={() => {
                 let cat = category;
-                if (category === "No Category") cat = "";
+                if (category === "All") cat = "";
                 dispatch(updateCategory(cat))
+                // console.log(currentCategory)
+                // getData()
               }}
             >
               {category}
@@ -27,7 +29,6 @@ const Categories = () => {
           )
         })}
       </ul>
-      <p>Current Category{currentCategory}</p>
     </>
   )
 }
