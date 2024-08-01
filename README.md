@@ -2,6 +2,8 @@
 
 Codecademy Portfolio Project - Reddit Client
 
+Live site: [Mineddit Reddit Client](https://mineddit.netlify.app)
+
 ## Project Requirements:
 - Build the application using React and Redux
 - Version control your application with Git and host the repository on GitHub
