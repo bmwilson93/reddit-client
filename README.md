@@ -56,6 +56,9 @@ Live site: [Mineddit Reddit Client](https://mineddit.netlify.app)
 - `Category List`
     - Holds the category buttons
 
+### Dependencies
+- boxicons
+- react-router
 
 
 # Getting Started with Create React App
